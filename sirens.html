@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Sirens – Siren Alert LA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Map</a></li>
+    <li><a href="fires.html">Manage Fires</a></li>
+    <li><a href="sirens.html">View Sirens</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>All Sirens</h1>
+
+  <section>
+    <h2>Create New Siren</h2>
+    <form id="create-siren-form">
+      <label>Name: <input type="text" id="siren-name" required></label>
+      <label>Latitude: <input type="number" step="any" id="siren-lat" required></label>
+      <label>Longitude: <input type="number" step="any" id="siren-lon" required></label>
+      <label>Disabled:
+        <select id="siren-disabled">
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+        </select>
+      </label>
+      <button type="submit">Add Siren</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Existing Sirens</h2>
+    <div class="table-container">
+      <table class="siren-table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Status</th>
+          <th>Disabled</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="sirens-list">
+        <!-- Filled dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<div id="editModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Edit Siren</h2>
+    <form id="edit-siren-form">
+      <input type="hidden" id="edit-id" />
+      <label>Name: <input type="text" id="edit-name" required></label><br>
+      <label>Latitude: <input type="number" id="edit-latitude" step="0.0001" required></label><br>
+      <label>Longitude: <input type="number" id="edit-longitude" step="0.0001" required></label><br>
+      <label>Status:
+        <select id="edit-status">
+          <option value="SAFE">SAFE</option>
+          <option value="DANGER">DANGER</option>
+        </select>
+      </label><br>
+      <label>Disabled:
+        <select id="edit-disabled">
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+        </select>
+      </label><br><br>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+
+<script src="js/sirens.js"></script>
+</body>
+</html>

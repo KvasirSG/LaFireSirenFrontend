@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Fires – Siren Alert LA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Map</a></li>
+    <li><a href="fires.html">Manage Fires</a></li>
+    <li><a href="sirens.html">View Sirens</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Manage Fires</h1>
+
+  <section>
+    <h2>Report New Fire</h2>
+    <form id="fire-form" class="form-inline">
+      <label>Latitude:
+        <input type="number" step="any" id="latitude" required>
+      </label>
+      <label>Longitude:
+        <input type="number" step="any" id="longitude" required>
+      </label>
+      <button type="submit">Submit Fire</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>🔥 Active Fires</h2>
+    <div class="table-container">
+      <table class="siren-table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Timestamp</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody id="active-fires"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="js/fires.js"></script>
+</body>
+</html>
